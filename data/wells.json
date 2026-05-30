@@ -1,0 +1,28 @@
+{
+  "wells": [
+    {
+      "name": "Thunder Horse #7",
+      "basin": "GoM",
+      "depth_ft": 18500,
+      "pressure_psi": 12450
+    },
+    {
+      "name": "Atlantis #3",
+      "basin": "GoM",
+      "depth_ft": 16200,
+      "pressure_psi": 8200
+    },
+    {
+      "name": "Mad Dog #12",
+      "basin": "GoM",
+      "depth_ft": 19800,
+      "pressure_psi": 11800
+    },
+    {
+      "name": "Perdido #9",
+      "basin": "GoM",
+      "depth_ft": 22000,
+      "pressure_psi": 13500
+    }
+  ]
+}

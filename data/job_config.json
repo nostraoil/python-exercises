@@ -1,0 +1,6 @@
+{
+    "filter_basin": "GoM",
+    "min_pressure_psi": 5000,
+    "output_file": "filtered_wells.csv",
+    "include_inactive": false
+}

@@ -1,0 +1,13 @@
+job_settings:
+  basin: GoM
+  min_pressure_psi: 10000
+  output_filename: high_pressure_wells.csv
+
+operator_info:
+  company: Superior Energy Services
+  region: Houston
+  
+features_enabled:
+  - filter_by_pressure
+  - filter_by_basin
+  - export_csv
