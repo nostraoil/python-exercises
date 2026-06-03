@@ -23,7 +23,7 @@ class InjectionWell(Well):
         self.injection_fluid = injection_fluid
 
     def daily_injection_volume(self):
-            return self.injection_rate * 1 #bbl/day simplified
+        return self.injection_rate * 1 #bbl/day simplified
 
     def overbalance_margin(self):
         # Different math for injection — placeholder for now
