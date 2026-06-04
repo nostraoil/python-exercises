@@ -28,3 +28,6 @@ class InjectionWell(Well):
     def overbalance_margin(self):
         # Different math for injection — placeholder for now
         return self.pressure - self.hydrostatic_pressure()
+
+if __name__ == "__main__":
+    print("well.py is running!")
