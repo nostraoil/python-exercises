@@ -1,0 +1,12 @@
+well_id,zone_count,completion_type
+WELL-001,3,open-hole
+WELL-002,5,cased-hole
+WELL-004,2,open-hole
+WELL-005,4,multistage
+WELL-006,6,cased-hole
+WELL-007,3,multistage
+WELL-008,7,cased-hole
+WELL-009,2,open-hole
+WELL-011,5,multistage
+WELL-012,4,cased-hole
+W-99,1,open-hole
