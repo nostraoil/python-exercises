@@ -14,3 +14,12 @@ if response.status_code == 200:
         print(repo["name"])
 else:
     print(f"Request failed: {response.status_code}")
+
+response = requests.post("https://httpbin.org/post", json={"well": "LWX20"})
+
+print(response.status_code)
+print(response.headers['Content-Type'])
+print(response.json())
+
+data = response.json()
+print(data["json"]["well"])
