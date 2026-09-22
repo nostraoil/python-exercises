@@ -8,8 +8,9 @@ print(response.headers['Content-Type'])
 
 response = requests.get("https://api.github.com/users/nostraoil/repos", params={"per_page": 5})
 
-repos = response.json()
-
-for repo in repos:
-    print(repo["name"])
-print(type(repos))
+if response.status_code == 200:
+    repos = response.json()
+    for repo in repos:
+        print(repo["name"])
+else:
+    print(f"Request failed: {response.status_code}")
