@@ -1,3 +1,4 @@
+import os
 import requests
 
 
@@ -26,8 +27,18 @@ def post_well(well_name):
     response.raise_for_status()
     return response.json()
 
+def get_bearer(token):
+    response = requests.get(
+        "https://httpbin.org/bearer",
+        headers={"Authorization": f"Bearer {token}"}
+    )
+
+    response.raise_for_status()
+    return response.json()
 
 def main():
+    token = os.environ["HTTPBIN_TOKEN"]
+
     quote = get_zen()
     print(quote)
 
@@ -37,6 +48,9 @@ def main():
 
     data = post_well("LWX20")
     print(data["json"]["well"])
+
+    bearer_data = get_bearer(token)
+    print(bearer_data)
 
 
 if __name__ == "__main__":
