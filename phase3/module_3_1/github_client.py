@@ -1,25 +1,43 @@
 import requests
 
-response = requests.get("https://api.github.com/zen")
 
-print(response.status_code)
-print(response.text)
-print(response.headers['Content-Type'])
+def get_zen():
+    response = requests.get("https://api.github.com/zen")
+    response.raise_for_status()
+    return response.text
 
-response = requests.get("https://api.github.com/users/nostraoil/repos", params={"per_page": 5})
 
-if response.status_code == 200:
-    repos = response.json()
+def get_repos(username):
+    response = requests.get(
+        f"https://api.github.com/users/{username}/repos",
+        params={"per_page": 5}
+    )
+
+    response.raise_for_status()
+    return response.json()
+
+
+def post_well(well_name):
+    response = requests.post(
+        "https://httpbin.org/post",
+        json={"well": well_name}
+    )
+
+    response.raise_for_status()
+    return response.json()
+
+
+def main():
+    quote = get_zen()
+    print(quote)
+
+    repos = get_repos("nostraoil")
     for repo in repos:
         print(repo["name"])
-else:
-    print(f"Request failed: {response.status_code}")
 
-response = requests.post("https://httpbin.org/post", json={"well": "LWX20"})
+    data = post_well("LWX20")
+    print(data["json"]["well"])
 
-print(response.status_code)
-print(response.headers['Content-Type'])
-print(response.json())
 
-data = response.json()
-print(data["json"]["well"])
+if __name__ == "__main__":
+    main()
